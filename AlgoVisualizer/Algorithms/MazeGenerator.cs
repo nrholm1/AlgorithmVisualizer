@@ -11,6 +11,9 @@ namespace AlgoVisualizer.Algorithms
 {
     public static class RecursiveDivision
     {
+        private const char HORIZONTAL = 'h';
+        private const char VERTICAL = 'v';
+
         private static int GRID_BOUNDARY_X = Form1.GRID_BOUNDARY_X;
         private static int GRID_BOUNDARY_Y = Form1.GRID_BOUNDARY_Y;
         private static Random rand = new Random();
@@ -49,14 +52,14 @@ namespace AlgoVisualizer.Algorithms
             {
                 x = btnBar.Direction == "left" ? _RNG(btnBar.Index.X - btnBar.Length, btnBar.Index.X) : _RNG(btnBar.Index.X, btnBar.Index.X + btnBar.Length);
                 y = btnBar.Index.Y;
-                dir = _RNG(0, 100) > 50 ? "up" : "down";
+                dir = PickDirection(VERTICAL); 
                 len = btnBar.Direction == "left" ? btnBar.Index.X : GRID_BOUNDARY_X - btnBar.Index.X;
             }
             if (btnBar.Direction == "up" || btnBar.Direction == "down")
             {
                 x = btnBar.Index.X;
                 y = btnBar.Direction == "up" ? _RNG(btnBar.Index.Y - btnBar.Length, btnBar.Index.Y) : _RNG(btnBar.Index.Y, btnBar.Index.Y + btnBar.Length);
-                dir = _RNG(0, 100) > 50 ? "left" : "right";
+                dir = PickDirection(HORIZONTAL); 
                 len = btnBar.Direction == "down" ? btnBar.Index.Y : GRID_BOUNDARY_Y - btnBar.Index.Y;
             }
             newBar = new ButtonBar(x, y, dir, len);
@@ -115,6 +118,19 @@ namespace AlgoVisualizer.Algorithms
         private static int _RNG(int min=0, int max=1)
         {
             return rand.Next(min, max);
+        }
+
+        private static string PickDirection(char direction)
+        {
+            switch (direction)
+            {
+                case 'h':
+                    return _RNG(0, 100) > 50 ? "left" : "right";
+                case 'v':
+                    return _RNG(0, 100) > 50 ? "up" : "down";
+                default:
+                    throw new Exception("Unknown axis in directional parameter");
+            }
         }
     }
 

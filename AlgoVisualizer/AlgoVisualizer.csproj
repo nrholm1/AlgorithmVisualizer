@@ -54,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Render.cs" />
     <Compile Include="Models\ButtonBar.cs" />
     <Compile Include="Models\XYButton.cs">
       <SubType>Component</SubType>

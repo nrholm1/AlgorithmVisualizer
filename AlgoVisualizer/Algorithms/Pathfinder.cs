@@ -24,11 +24,8 @@ namespace AlgoVisualizer.Algorithms
             // Classic Dijkstra
             List<XYButton> SptSet = new List<XYButton>() { InputGraph[start.X, start.Y] };
 
-            // Bi-directional Dijkstra - Not implemented
+            // Bi-directional Dijkstra - Not implemented yet
             //List<XYButton> SptSet = new List<XYButton>() { InputGraph[start.X, start.Y] };
-
-
-            Console.WriteLine($"CalculateShortestPathLengths called with start:({start.X},{start.Y}) end:({end.X},{end.Y})");
 
 
             while (SptSet.Count < InputGraph.Length && InputGraph[end.X, end.Y].shortestPathLength == int.MaxValue)
@@ -86,12 +83,11 @@ namespace AlgoVisualizer.Algorithms
         {
             foreach (Point p in SptStartEnd)
             {
-                RenderField(ButtonGrid[p.X,p.Y], (int)Form1.Fields.PATH); // p, p added because i cannot have default parameters for control button???
+                RenderField(ButtonGrid[p.X,p.Y], (int)Form1.Fields.PATH);
                 Thread.Sleep(15); // Show path as 'animation' instead of instantly
             }
         }
 
-        // Change so this is more modularized and encompasses Pathtracing coloring/rendering as well
         private static void RenderField(XYButton b, int FieldType)
         {
             Form1.RenderField(b, FieldType);

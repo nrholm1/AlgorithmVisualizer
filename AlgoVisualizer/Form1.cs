@@ -23,10 +23,10 @@ namespace AlgoVisualizer
         private Models.XYButton[,] ButtonGrid = new Models.XYButton[GRID_BOUNDARY_X, GRID_BOUNDARY_Y];
 
         public enum Fields {WALL,
-                                END_POINT,
-                                MARKED,
-                                PATH,
-                                EMPTY}
+                            END_POINT,
+                            MARKED,
+                            PATH,
+                            EMPTY}
 
         public static Color MARKED_COLOR = Color.CornflowerBlue;
         public static Color PATH_COLOR = Color.Yellow;
@@ -41,7 +41,6 @@ namespace AlgoVisualizer
         public Form1()
         {
             InitializeForm();
-
         }
 
         private void InitializeForm()
@@ -58,28 +57,17 @@ namespace AlgoVisualizer
             {
                 b.InitValues(b.index.X, b.index.Y);
             }
-            
             START = new Point(-1, -1);
             END = new Point(-1, -1);
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-            
+        private void Form1_Load(object sender, EventArgs e) { }
 
-
-
-
-        }
-
-        // public static void CalculateShortestPathLengths(Models.XYButton[,] InputGraph, Point start, Point end)
 
         // ------------------------------------------------------------------------------------------------------------------------ //
         // ------------------------------------------------------------------------------------------------------------------------ //
         // ------------------------------------------------------------------------------------------------------------------------ //
-
 
 
         private void InitializeGrid()
@@ -158,79 +146,47 @@ namespace AlgoVisualizer
             RenderField(b, fieldType);
         }
 
-        // Change so this is more modularized and encompasses Pathtracing coloring/rendering as well
+
         public static void RenderField(XYButton b, int FieldType)
         {
             switch(FieldType)
             {
                 case (int)Fields.MARKED:
-                    RenderMarkedField(b);
+                    Helpers.Render.MarkedField(b, START, END);
                     break;
                 case (int)Fields.END_POINT:
-                    RenderEndField(b);
+                    Helpers.Render.EndField(b);
                     break;
                 case (int)Fields.WALL:
-                    RenderWallField(b);
+                    Helpers.Render.WallField(b);
                     break;
                 case (int)Fields.PATH:
-                    RenderPathField(b);
+                    Helpers.Render.PathField(b);
                     break;
                 case (int)Fields.EMPTY:
-                    RenderEmptyField(b);
+                    Helpers.Render.EmptyField(b);
                     break;
             }
         }
-
-        private static void RenderMarkedField(XYButton b)
-        {
-            if (b.index != START && b.index != END && b.BackColor != MARKED_COLOR)
-            {
-                Form1.ChangeBackColor(b, MARKED_COLOR);
-                b.Update();
-            }
-        }
-        private static void RenderWallField(XYButton b)
-        {
-            Form1.ChangeBackColor(b, WALL_COLOR);
-            b.Update();
-        }
-        private static void RenderEndField(XYButton b)
-        {
-            Form1.ChangeBackColor(b, END_COLOR);
-            b.Update();
-        }
-        private static void RenderPathField(XYButton b)
-        {
-            Form1.ChangeBackColor(b, PATH_COLOR);
-            b.Update();
-        }
-        private static void RenderEmptyField(XYButton b)
-        {
-            Form1.ChangeBackColor(b, EMPTY_COLOR);
-            b.Update();
-        }
-
 
 
         public void AlgorithmEvent(object sender, KeyPressEventArgs e)
         {
-            // Space = Dijkstra Pathfinder
+            // spacebar = Dijkstra Pathfinder
             if (e.KeyChar == (char)Keys.Space && START.X != -1 && END.X != -1)
             { 
-                Console.WriteLine("pathfinderevent called");
-
                 Algorithms.Pathfinder.CalculateShortestPathLengths(ButtonGrid, START, END);
-
                 Console.WriteLine($"Shortest path between ({START.X},{START.Y}) and ({END.X},{END.Y}) is {ButtonGrid[END.X,END.Y].shortestPathLength}");
             }
 
             // m = Maze Generator recursive backtracker
             if (e.KeyChar == 'm')
             {
-                //Algorithms.RecursiveDivision.GenerateMaze(ButtonGrid);
-                Algorithms.RandomPointCloud.GeneratePointCloud(500, ButtonGrid);
+                Algorithms.RecursiveDivision.GenerateMaze(ButtonGrid);
+                //Algorithms.RandomPointCloud.GeneratePointCloud(500, ButtonGrid);
             }
 
+            // r = Reset grid and reinitialize values
             if (e.KeyChar == (char)'r')
             {
                 ResetForm();
