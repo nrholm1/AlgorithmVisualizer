@@ -1,0 +1,10 @@
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\bin\Debug\AlgoVisualizer.exe.config
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\bin\Debug\AlgoVisualizer.exe
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\bin\Debug\AlgoVisualizer.pdb
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Debug\AlgoVisualizer.csprojAssemblyReference.cache
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Debug\AlgoVisualizer.Form1.resources
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Debug\AlgoVisualizer.Properties.Resources.resources
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Debug\AlgoVisualizer.csproj.GenerateResource.cache
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Debug\AlgoVisualizer.csproj.CoreCompileInputs.cache
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Debug\AlgoVisualizer.exe
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Debug\AlgoVisualizer.pdb

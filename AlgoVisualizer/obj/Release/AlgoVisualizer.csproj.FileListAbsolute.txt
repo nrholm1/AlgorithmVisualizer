@@ -1,0 +1,9 @@
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\bin\Release\AlgoVisualizer.exe.config
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\bin\Release\AlgoVisualizer.exe
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\bin\Release\AlgoVisualizer.pdb
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Release\AlgoVisualizer.Form1.resources
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Release\AlgoVisualizer.Properties.Resources.resources
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Release\AlgoVisualizer.csproj.GenerateResource.cache
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Release\AlgoVisualizer.csproj.CoreCompileInputs.cache
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Release\AlgoVisualizer.exe
+C:\Users\Niels Raunkjær Holm\source\repos\AlgoVisualizer\AlgoVisualizer\obj\Release\AlgoVisualizer.pdb
